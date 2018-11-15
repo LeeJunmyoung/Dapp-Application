@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>My test page</title>
+	<script src="web3.js/dist/web3.min.js"></script>
+	<script type="text/javascript">
+	if (typeof web3 !== 'undefined') {
+	console.log("undefined??");
+	 //web3 = new Web3(web3.currentProvider);
+	 web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
+	} else {
+	console.log("defined??");
+	 // set the provider you want from Web3.providers
+	 web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
+	}
+	function getBalance(){
+	web3.eth.getBalance(web3.eth.accounts[0],function(error,balance){
+		document.getElementById("balance").innerText=web3.fromWei(balance,"ether");
+		})
+	}
+	</script>
+  </head>
+  <body>
+    <h1>내 이더리움 지갑 잔고</h1>
+	<button onclick="getBalance()">조회 </button>
+	<p id="balance">0</p>
+  </body>
+</html>
