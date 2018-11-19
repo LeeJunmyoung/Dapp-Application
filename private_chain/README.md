@@ -1,32 +1,32 @@
-# private block chain ±¸Ãà
+# private block chain êµ¬ì¶•
 
-## 1. geth ¼³Ä¡
+## 1. geth ì„¤ì¹˜
 
-## 2. ÃÊ±â json ÆÄÀÏ »ı¼º
-* ±¸±Û¸µÇØ¼­ genesis.jsonÀ» ÃÄ¼­ Ç×¸ñ°ªÀ» È®ÀÎÇØº¸Àğ.
+## 2. ì´ˆê¸° json íŒŒì¼ ìƒì„±
+* êµ¬ê¸€ë§í•´ì„œ genesis.jsonì„ ì³ì„œ í•­ëª©ê°’ì„ í™•ì¸í•´ë³´ìŸˆ.
 
-## 3.private ºí·Ï Ã¼ÀÎ ¸¸µé±â
-> geth init .\genesis.json --datadir [Æú´õ¸í]
-*ÃÊ±âÆÄÀÏÀ» ¸¸µé¾îÁÜ.
+## 3.private ë¸”ë¡ ì²´ì¸ ë§Œë“¤ê¸°
+> geth init .\genesis.json --datadir [í´ë”ëª…]
+*ì´ˆê¸°íŒŒì¼ì„ ë§Œë“¤ì–´ì¤Œ.
 
-## 4.private ºí·ÏÃ¼ÀÎ ÀÛµ¿
+## 4.private ë¸”ë¡ì²´ì¸ ì‘ë™
 >geth --datadir .\private_chaindata\ --nodiscover
 
-## 5. »õ·Î¿î ÄÜ¼Ö·Î ipc Á¢¼Ó
+## 5. ìƒˆë¡œìš´ ì½˜ì†”ë¡œ ipc ì ‘ì†
 >geth attach ipc://./pipe/geth.ipc  
 
-## 6. °èÁ¤»ı¼º
+## 6. ê³„ì •ìƒì„±
 > eth.newAccount()
-> ¸í·É¾î ref : https://github.com/ethereum/go-ethereum/wiki/Management-APIs
+> ëª…ë ¹ì–´ ref : https://github.com/ethereum/go-ethereum/wiki/Management-APIs
 
 ## 7. mining
-> miner.start(thread ¼ö)
+> miner.start(thread ìˆ˜)
 
-## 8. web3 ¼³Ä¡
+## 8. web3 ì„¤ì¹˜
 > https://github.com/ethereum/web3.js/
 
-## 9. geth rpc open ½ÇÇà
-> geth --datadir .\private_chaindata\ --rpc --rpcapi "db,net,eth,web3" --rpccorsdomain "*"
+## 9. geth rpc open ì‹¤í–‰
+> geth --datadir .\private_chaindata\ --rpc --rpcapi "db,net,eth,web3" --rpccorsdomain "*"  
 > json -rpc endpoint - ref : https://github.com/ethereum/wiki/wiki/JSON-RPC#json-rpc-endpoint
 
-## 10. web3 ¿¬µ¿ ¤¡¤¡
+## 10. web3 ì—°ë™ ã„±ã„±
