@@ -1,29 +1,31 @@
-<!DOCTYPE html>
+<!<!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>My test page</title>
-	<script src="web3.js/dist/web3.min.js"></script>
-	<script type="text/javascript">
-	if (typeof web3 !== 'undefined') {
-	console.log("undefined??");
-	 //web3 = new Web3(web3.currentProvider);
-	 web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
-	} else {
-	console.log("defined??");
-	 // set the provider you want from Web3.providers
-	 web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
-	}
-	function getBalance(){
-	web3.eth.getBalance(web3.eth.accounts[0],function(error,balance){
-		document.getElementById("balance").innerText=web3.fromWei(balance,"ether");
-		})
-	}
-	</script>
-  </head>
-  <body>
-    <h1>내 이더리움 지갑 잔고</h1>
-	<button onclick="getBalance()">조회 </button>
-	<p id="balance">0</p>
+<head>
+  <script type="text/javascript" src="web3.js/dist/web3.min.js" ></script >
+    <script type="text/javascript">
+      var web3;
+      if (typeof web3 !== 'undefined') {
+        web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
+      } else {
+      // set the provider you want from Web3.providers
+        web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
+      }
+
+      function getBalance(){
+        web3.eth.getBalance(web3.eth.accounts[0] ,function(error,balance){
+          document.getElementById("Balance").innerText = web3.fromWei(balance, 'ether') + 'ether';
+        });
+        document.getElementById("Account").innerText = web3.eth.accounts[0];
+
+      }
+    </script>
+
+
+</head>
+<body>
+  <h1 >MY ACCOUNTS : <span id="Account"></span></h1>
+  <h1 >MY ETHER : <span id="Balance"></span></h1>
+  <button type="button" name="button" onclick="getBalance()">gogo</button>
+
   </body>
 </html>
