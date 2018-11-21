@@ -1,0 +1,27 @@
+<!<!DOCTYPE html>
+<html>
+<head>
+  <script type="text/javascript" src="web3.js/dist/web3.min.js" ></script >
+    <script type="text/javascript">
+      var web3;
+      web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
+      web3.personal.unlockAccount(web3.eth.accounts[0],'1234');
+      
+      var sendAmount = web3.toWei('10', 'ether');
+
+      var txHash = web3.eth.sendTransaction({
+          from: web3.eth.accounts[0],
+          to: web3.eth.accounts[1],
+          value: sendAmount
+      });
+
+
+
+    </script>
+
+
+</head>
+<body>
+
+  </body>
+</html>
